@@ -201,7 +201,6 @@ def macCormack(rho, u, v, p, T, Ma, x):
     F_rhs_bar = np.zeros((F.shape))
     for i in range(4):
         F_rhs_bar[i][1:] = d_eta_d_x[1:]*(F_bar[i][:-1]-F_bar[i][1:])/d_eta+1/h*(G_bar[i][:-1]-G_bar[i][1:])/d_eta
-        # 单侧差分
         F_rhs_bar[i][0] = d_eta_d_x[0]*(F_bar[i][0]-F_bar[i][1])/d_eta+1/h*(G_bar[i][0]-G_bar[i][1])/d_eta
     
     for i in range(4):
@@ -257,7 +256,7 @@ if __name__=="__main__":
         if i <10:
             hh[index] = 40
         else:
-            hh[index] = 40+np.tan(theta_rad)*(xx[index]-10)
+            hh[index] = 40+np.tan(0.09341002)*(xx[index]-10)
         index = index +1
     #plot geometry
     plt.figure(figsize=(16,12))
