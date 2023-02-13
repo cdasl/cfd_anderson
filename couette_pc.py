@@ -38,7 +38,7 @@ def PC(rho, u, v, p_star, p_prime):
     """
     pressure correction method
     """
-    # step 1: set p_star value in internal mesh dot
+    # step 1: set p_star value in internal grid
     # step 2: solve rho*u_star and rho*v_star in next step by momentum equation
     # step 3: use the predicted values to solve p_prime for using the pressure correction formula.
     u_star = u.copy() # (nx+1,ny)
